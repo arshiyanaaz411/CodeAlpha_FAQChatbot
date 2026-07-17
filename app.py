@@ -10,25 +10,28 @@ st.markdown("""
 html, body, [class*="css"] { font-family: 'Poppins', sans-serif; }
 .stApp { background: linear-gradient(180deg, #fef4f0 0%, #ffffff 100%); }
 #MainMenu, footer, header {visibility: hidden;}
+h1, h2, h3, h4, h5, h6, p, label, .stMarkdown, div[data-testid="stMarkdownContainer"] {
+    color: #333333 !important;
+}
 .navbar {
     background: linear-gradient(90deg, #9F2B8F, #6C2BD9);
     padding: 18px 25px; border-radius: 0px 0px 20px 20px;
     margin: -80px -80px 20px -80px; box-shadow: 0 4px 15px rgba(108,43,217,0.3);
 }
-.navbar-title { color: white; font-size: 26px; font-weight: 800; margin: 0; }
-.navbar-sub { color: #f0d9ff; font-size: 13px; margin: 0; }
+.navbar-title { color: white !important; font-size: 26px; font-weight: 800; margin: 0; }
+.navbar-sub { color: #f0d9ff !important; font-size: 13px; margin: 0; }
 .hero {
     background: linear-gradient(135deg, #9F2B8F, #6C2BD9);
     border-radius: 20px; padding: 40px 30px; text-align: center; color: white; margin-bottom: 20px;
 }
-.hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
-.hero p { font-size: 15px; opacity: 0.9; }
+.hero h1 { color: white !important; font-size: 34px; font-weight: 800; margin-bottom: 8px; }
+.hero p { color: white !important; font-size: 15px; opacity: 0.9; }
 .card {
     background: white; border-radius: 16px; padding: 20px; text-align: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #f5eaf0; height: 100%;
 }
-.card h3 { color: #6C2BD9; font-size: 17px; margin: 10px 0 6px 0; }
-.card p { color: #777; font-size: 13px; }
+.card h3 { color: #6C2BD9 !important; font-size: 17px; margin: 10px 0 6px 0; }
+.card p { color: #777 !important; font-size: 13px; }
 .bot-row { display: flex; align-items: flex-start; margin: 12px 0px; }
 .bot-avatar {
     background: linear-gradient(135deg, #9F2B8F, #6C2BD9); color: white;
@@ -36,25 +39,25 @@ html, body, [class*="css"] { font-family: 'Poppins', sans-serif; }
     align-items: center; justify-content: center; font-size: 18px; margin-right: 10px; flex-shrink: 0;
 }
 .bot-msg {
-    background: white; border: 1px solid #f0e0ea; color: #333;
+    background: white; border: 1px solid #f0e0ea; color: #333 !important;
     padding: 14px 18px; border-radius: 4px 18px 18px 18px; max-width: 70%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 14.5px; line-height: 1.5;
 }
 .user-row { display: flex; justify-content: flex-end; margin: 12px 0px; }
 .user-msg {
-    background: linear-gradient(135deg, #9F2B8F, #6C2BD9); color: white;
+    background: linear-gradient(135deg, #9F2B8F, #6C2BD9); color: white !important;
     padding: 14px 18px; border-radius: 18px 4px 18px 18px; max-width: 70%;
     font-size: 14.5px; line-height: 1.5; box-shadow: 0 2px 8px rgba(108,43,217,0.25);
 }
 .stButton>button {
-    background: linear-gradient(90deg, #9F2B8F, #6C2BD9); color: white;
+    background: linear-gradient(90deg, #9F2B8F, #6C2BD9); color: white !important;
     border: none; border-radius: 12px; height: 46px; font-weight: 700;
     width: 100%; box-shadow: 0 2px 10px rgba(108,43,217,0.3);
 }
 .stButton>button:hover { transform: scale(1.02); }
 div[data-testid="stTextInput"] input {
     background-color: white; border: 1.5px solid #e8d5e0;
-    border-radius: 12px; color: #333; padding: 12px 16px;
+    border-radius: 12px; color: #333 !important; padding: 12px 16px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -280,3 +283,4 @@ elif st.session_state.page == "chatbot":
     if st.button("🗑️ Clear Chat"):
         st.session_state.chat_history = [("bot", "Hi there! 👋 I'm your StyleHub assistant. Ask me about orders, shipping, returns, sizing, or payments!")]
         st.rerun()
+    
